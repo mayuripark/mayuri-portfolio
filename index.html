@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayuri Parkhe - UI/UX Designer & Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-50: #f0f4f8;
+            --primary-100: #d9e2ec;
+            --primary-200: #bcccdc;
+            --primary-300: #9fb3c8;
+            --primary-400: #829ab1;
+            --primary-500: #627d98;
+            --primary-600: #486581;
+            --primary-700: #334e68;
+            --primary-800: #243b53;
+            --primary-900: #102a43;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--primary-800);
+            background: var(--primary-50);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--primary-200);
+        }
+
+        header h1 {
+            font-size: 3.2em;
+            font-weight: 500;
+            color: var(--primary-900);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.15em;
+            color: var(--primary-600);
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            margin-bottom: 8px;
+        }
+
+        .contact-links {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-links a {
+            color: var(--primary-500);
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary-700);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--primary-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-600);
+            margin: 0 28px;
+            font-weight: 400;
+            font-size: 0.95em;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            color: var(--primary-800);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Section */
+        section {
+            margin: 80px 0;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 45px;
+            text-align: center;
+            color: var(--primary-900);
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+
+        /* Links Box */
+        .links-box {
+            background: var(--primary-100);
+            border: 1px solid var(--primary-200);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .links-box h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+            color: var(--primary-700);
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .links-box a {
+            color: var(--primary-600);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.95em;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .links-box a:hover {
+            color: var(--primary-800);
+        }
+
+        /* Featured Banner */
+        .featured-banner {
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+            color: white;
+            padding: 55px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(72, 101, 129, 0.15);
+        }
+
+        .featured-banner h3 {
+            font-size: 2em;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .featured-banner p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: white;
+            color: var(--primary-700);
+            padding: 8px 22px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            margin-top: 18px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        /* About */
+        .about-content {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid var(--primary-200);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.08em;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            color: var(--primary-700);
+            font-weight: 300;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-content strong {
+            color: var(--primary-900);
+            font-weight: 500;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 38px;
+            border-radius: 12px;
+            border: 1px solid var(--primary-200);
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary-400);
+            box-shadow: 0 8px 20px rgba(72, 101, 129, 0.1);
+        }
+
+        .skill-card h3 {
+            color: var(--primary-800);
+            margin-bottom: 22px;
+            font-size: 1.35em;
+            font-weight: 500;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: var(--primary-100);
+            padding: 7px 15px;
+            margin: 5px;
+            border-radius: 6px;
+            font-size: 0.88em;
+            color: var(--primary-700);
+            border: 1px solid var(--primary-200);
+            font-weight: 400;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--primary-200);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary-400);
+            box-shadow: 0 12px 28px rgba(72, 101, 129, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            border-bottom: 1px solid var(--primary-200);
+            position: relative;
+        }
+
+        .ddf-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: white;
+            color: var(--primary-700);
+            padding: 6px 13px;
+            border-radius: 6px;
+            font-size: 0.3em;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            color: var(--primary-900);
+            margin-bottom: 12px;
+            font-size: 1.45em;
+            font-weight: 500;
+        }
+
+        .project-content p {
+            color: var(--primary-600);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: var(--primary-100);
+            color: var(--primary-700);
+            padding: 6px 13px;
+            margin: 3px;
+            border-radius: 5px;
+            font-size: 0.82em;
+            border: 1px solid var(--primary-200);
+            font-weight: 400;
+        }
+
+        /* Timeline */
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 38px;
+            border-radius: 12px;
+            border: 1px solid var(--primary-200);
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            border-color: var(--primary-400);
+            box-shadow: 0 8px 20px rgba(72, 101, 129, 0.1);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary-900);
+            font-size: 1.45em;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .timeline-item .company {
+            color: var(--primary-600);
+            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .timeline-item .duration {
+            color: var(--primary-400);
+            font-size: 0.88em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .timeline-item ul {
+            margin-left: 20px;
+        }
+
+        .timeline-item li {
+            color: var(--primary-700);
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            border: 1px solid var(--primary-200);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            font-size: 1.08em;
+            margin-bottom: 35px;
+            color: var(--primary-600);
+            font-weight: 300;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: var(--primary-700);
+            color: white;
+            padding: 13px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 0.95em;
+            letter-spacing: 0.3px;
+        }
+
+        .btn:hover {
+            background: var(--primary-800);
+            box-shadow: 0 6px 18px rgba(72, 101, 129, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-top: 1px solid var(--primary-200);
+            color: var(--primary-600);
+            text-align: center;
+            padding: 40px;
+            margin-top: 80px;
+            font-size: 0.9em;
+            font-weight: 300;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            
+            section h2 {
+                font-size: 2em;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: block;
+                margin: 12px 0;
+            }
+
+            .about-content {
+                padding: 35px 25px;
+            }
+
+            .featured-banner {
+                padding: 45px 25px;
+            }
+
+            .featured-banner h3 {
+                font-size: 1.6em;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .links-box a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Mayuri Parkhe</h1>
+        <p>UI/UX Designer & Full Stack Developer</p>
+        <p style="font-size: 0.95em; color: var(--primary-500);">Mumbai, India</p>
+        <div class="contact-links">
+            <a href="mailto:mayuripark@gmail.com">📧 mayuripark@gmail.com</a>
+            <a href="tel:+918450995536">📱 +91 8450995536</a>
+            <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/mayuripark" target="_blank">💻 GitHub</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Featured Banner -->
+        <div class="featured-banner">
+            <h3>Featured Work: Dubai Duty Free</h3>
+            <p>Designed 8+ boutique pages for world's leading airport retailer</p>
+            <span class="featured-badge">E-commerce Design</span>
+        </div>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>Full Stack Developer with <strong>3+ years of professional experience</strong> specializing in UI/UX design, frontend development, and e-commerce solutions.</p>
+                <p>Proven expertise in creating user-centered designs using <strong>Figma, Adobe XD, and Sketch</strong>, with strong implementation skills in HTML5, CSS3, and modern JavaScript frameworks. Experienced in React.js, Material UI, responsive design, and delivering intuitive, accessible user interfaces.</p>
+                <p>Strong background in design systems, wireframing, prototyping, and cross-functional team collaboration.</p>
+                <p><strong>Languages:</strong> English (Native Bilingual - C2), German (Elementary - A2)</p>
+                
+                <div class="links-box">
+                    <h4>Connect With Me</h4>
+                    <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/mayuripark" target="_blank">GitHub</a>
+                    <a href="mailto:mayuripark@gmail.com">Email</a>
+                    <a href="tel:+918450995536">Phone</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>UX/UI Design Tools</h3>
+                    <div class="skill-tag">Figma</div>
+                    <div class="skill-tag">Adobe XD</div>
+                    <div class="skill-tag">Sketch</div>
+                    <div class="skill-tag">Wireframing</div>
+                    <div class="skill-tag">Prototyping</div>
+                    <div class="skill-tag">User Research</div>
+                    <div class="skill-tag">Design Systems</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tag">JavaScript (3+ years)</div>
+                    <div class="skill-tag">Python (2.5 years)</div>
+                    <div class="skill-tag">C</div>
+                    <div class="skill-tag">MATLAB</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-tag">React.js</div>
+                    <div class="skill-tag">JavaScript ES6+</div>
+                    <div class="skill-tag">HTML5</div>
+                    <div class="skill-tag">CSS3</div>
+                    <div class="skill-tag">Material UI</div>
+                    <div class="skill-tag">Responsive Design</div>
+                    <div class="skill-tag">Accessibility (WCAG)</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Backend Development</h3>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">FastAPI</div>
+                    <div class="skill-tag">RESTful APIs</div>
+                    <div class="skill-tag">Node.js</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Design & User Experience</h3>
+                    <div class="skill-tag">User-Centered Design</div>
+                    <div class="skill-tag">Information Architecture</div>
+                    <div class="skill-tag">Interaction Design</div>
+                    <div class="skill-tag">Usability Testing</div>
+                    <div class="skill-tag">A/B Testing</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Database & Tools</h3>
+                    <div class="skill-tag">MySQL</div>
+                    <div class="skill-tag">PostgreSQL</div>
+                    <div class="skill-tag">MongoDB</div>
+                    <div class="skill-tag">Oracle DB</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">Jira</div>
+                    <div class="skill-tag">Confluence</div>
+                    <div class="skill-tag">Postman</div>
+                    <div class="skill-tag">VS Code</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Security & Methodologies</h3>
+                    <div class="skill-tag">OAuth2</div>
+                    <div class="skill-tag">API Security Standards</div>
+                    <div class="skill-tag">Agile</div>
+                    <div class="skill-tag">Scrum</div>
+                    <div class="skill-tag">Test-Driven Development</div>
+                    <div class="skill-tag">Code Reviews</div>
+                    <div class="skill-tag">Sprint Planning</div>
+                </div>
+            </div>
+
+            <div class="links-box" style="margin-top: 40px;">
+                <h4>View My Work</h4>
+                <a href="https://github.com/mayuripark" target="_blank">GitHub Portfolio</a>
+                <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn Projects</a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects & Research</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">💄<span class="ddf-badge">DUBAI DUTY FREE</span></div>
+                    <div class="project-content">
+                        <h3>Beauty Boutique</h3>
+                        <p>Premium cosmetics and fragrances page with luxury brand aesthetic and intuitive product browsing experience.</p>
+                        <span class="project-tag">Figma</span>
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">Responsive Design</span>
+                        <span class="project-tag">Material UI</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">📱<span class="ddf-badge">DUBAI DUTY FREE</span></div>
+                    <div class="project-content">
+                        <h3>Technology Store</h3>
+                        <p>Modern electronics boutique with dynamic product displays, comparison features, and seamless user flow.</p>
+                        <span class="project-tag">Adobe XD</span>
+                        <span class="project-tag">React.js</span>
+                        <span class="project-tag">UX Design</span>
+                        <span class="project-tag">User Research</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🥃<span class="ddf-badge">DUBAI DUTY FREE</span></div>
+                    <div class="project-content">
+                        <h3>Liquor & Tobacco</h3>
+                        <p>Sophisticated boutique pages with age verification, premium browsing experience, and brand-focused design.</p>
+                        <span class="project-tag">Sketch</span>
+                        <span class="project-tag">Premium UI</span>
+                        <span class="project-tag">Brand Identity</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">⌚<span class="ddf-badge">DUBAI DUTY FREE</span></div>
+                    <div class="project-content">
+                        <h3>Watches & Fashion</h3>
+                        <p>Luxury boutique featuring high-end brands with immersive product galleries and detailed product views.</p>
+                        <span class="project-tag">Figma</span>
+                        <span class="project-tag">Luxury UX</span>
+                        <span class="project-tag">Material UI</span>
+                        <span class="project-tag">A/B Testing</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🍫<span class="ddf-badge">DUBAI DUTY FREE</span></div>
+                    <div class="project-content">
+                        <h3>Food & Souvenirs</h3>
+                        <p>Cultural design with gift-giving focus, showcasing local and international products with engaging layouts.</p>
+                        <span class="project-tag">Adobe XD</span>
+                        <span class="project-tag">Cultural Design</span>
+                        <span class="project-tag">Grid Layouts</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🎾<span class="ddf-badge">DUBAI DUTY FREE</span></div>
+                    <div class="project-content">
+                        <h3>DDF Tennis Championship</h3>
+                        <p>Event page featuring ticketing, merchandise, dynamic sports-themed design, and event countdown.</p>
+                        <span class="project-tag">Figma</span>
+                        <span class="project-tag">Event Design</span>
+                        <span class="project-tag">Interactive UI</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🤖</div>
+                    <div class="project-content">
+                        <h3>Smart AGROBOT</h3>
+                        <p>AI-powered agricultural robot using Python for disease detection through image processing and machine learning. Published research paper in IJAREEIE Publication.</p>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Machine Learning</span>
+                        <span class="project-tag">Image Processing</span>
+                        <span class="project-tag">Research</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">💳</div>
+                    <div class="project-content">
+                        <h3>Payment Gateway Integration</h3>
+                        <p>Secure payment gateway integration with focus on user experience and API security standards.</p>
+                        <span class="project-tag">RESTful APIs</span>
+                        <span class="project-tag">OAuth2</span>
+                        <span class="project-tag">UX Design</span>
+                        <span class="project-tag">Security</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="links-box" style="margin-top: 40px;">
+                <h4>More Projects</h4>
+                <a href="https://github.com/mayuripark" target="_blank">View GitHub Repositories</a>
+                <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn Case Studies</a>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Software Engineer - Full Stack Developer</h3>
+                    <div class="company">Mastek Ltd., Mumbai</div>
+                    <div class="duration">August 2021 - March 2025</div>
+                    <ul>
+                        <li>Designed and developed user-centered interfaces using Figma and Adobe XD, translating designs into React.js components</li>
+                        <li>Created wireframes, prototypes, and high-fidelity mockups using Sketch and Figma for e-commerce platforms</li>
+                        <li>Implemented responsive, accessible UI components using React.js, Material UI, HTML5, and CSS3</li>
+                        <li>Conducted user research and usability testing to optimize UI/UX for Oracle Commerce Cloud storefronts</li>
+                        <li>Designed and maintained design systems ensuring consistent user experience across all touchpoints</li>
+                        <li>Collaborated with product managers and developers to deliver user-friendly, intuitive interfaces</li>
+                        <li>Applied interaction design principles and accessibility standards (WCAG) for inclusive design</li>
+                        <li>Integrated secure payment gateways using RESTful APIs with focus on user experience</li>
+                        <li>Performed A/B testing and iterative design improvements based on user feedback and analytics</li>
+                        <li>Mentored team members on UI/UX best practices and participated in design reviews</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Oracle Commerce Cloud Analyst</h3>
+                    <div class="company">Ibizsoft Inc., Mumbai</div>
+                    <div class="duration">March 2021 - August 2021</div>
+                    <ul>
+                        <li>Designed UI/UX for e-commerce clients using Figma and implemented custom features aligned with brand guidelines</li>
+                        <li>Created wireframes and prototypes for client projects, ensuring optimal user experience</li>
+                        <li>Delivered scalable, responsive designs using HTML5, CSS3, and Material UI components</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>MATLAB Developer</h3>
+                    <div class="company">MATLAB Helper, Mumbai</div>
+                    <div class="duration">April 2020 - November 2020</div>
+                    <ul>
+                        <li>Authored technical blog on Pitch Detection of Speech Signal using Autocorrelation</li>
+                        <li>Organized webinar on Fuzzy Logic Toolbox and revised Digital Signal Processing online course</li>
+                        <li>Managed technical content creation and outreach for YouTube platform</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="links-box" style="margin-top: 40px;">
+                <h4>Professional Profile</h4>
+                <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn Profile</a>
+                <a href="mailto:mayuripark@gmail.com">Request Resume</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-section">
+                <h2>Get in Touch</h2>
+                <p>Available for freelance projects and full-time opportunities in UI/UX Design and Frontend Development</p>
+                
+                <div class="contact-buttons">
+                    <a href="mailto:mayuripark@gmail.com" class="btn">Email Me</a>
+                    <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank" class="btn">LinkedIn</a>
+                    <a href="https://github.com/mayuripark" target="_blank" class="btn">GitHub</a>
+                    <a href="tel:+918450995536" class="btn">Call</a>
+                </div>
+
+                <div class="links-box" style="margin-top: 40px;">
+                    <h4>Additional Information</h4>
+                    <a href="mailto:mayuripark@gmail.com">Request Full CV/Resume</a>
+                    <a href="#about">View Complete Profile</a>
+                    <a href="#projects">Portfolio Samples</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mayuri Parkhe - UI/UX Designer & Full Stack Developer</p>
+        <p>Mumbai, India | Available for Remote & On-site Opportunities</p>
+        <p style="margin-top: 15px;">
+            <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank" style="color: var(--primary-500); text-decoration: none; margin: 0 10px;">LinkedIn</a>
+            <a href="https://github.com/mayuripark" target="_blank" style="color: var(--primary-500); text-decoration: none; margin: 0 10px;">GitHub</a>
+            <a href="mailto:mayuripark@gmail.com" style="color: var(--primary-500); text-decoration: none; margin: 0 10px;">Email</a>
+        </p>
+    </footer>
+</body>
+</html>
