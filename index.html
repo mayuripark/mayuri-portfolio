@@ -1,1025 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayuri Parkhe - AI-led Designer & Full Stack Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-50: #f0f4f8;
-            --primary-100: #d9e2ec;
-            --primary-200: #bcccdc;
-            --primary-300: #9fb3c8;
-            --primary-400: #829ab1;
-            --primary-500: #627d98;
-            --primary-600: #486581;
-            --primary-700: #334e68;
-            --primary-800: #243b53;
-            --primary-900: #102a43;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.7;
-            color: var(--primary-800);
-            background: var(--primary-50);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-        }
-
-        /* Header */
-        header {
-            background: white;
-            padding: 80px 20px 60px;
-            text-align: center;
-            border-bottom: 1px solid var(--primary-200);
-        }
-
-        header h1 {
-            font-size: 3.2em;
-            font-weight: 500;
-            color: var(--primary-900);
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        header p {
-            font-size: 1.15em;
-            color: var(--primary-600);
-            font-weight: 300;
-            letter-spacing: 0.3px;
-            margin-bottom: 8px;
-        }
-
-        .contact-links {
-            margin-top: 28px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .contact-links a {
-            color: var(--primary-500);
-            text-decoration: none;
-            font-size: 0.95em;
-            transition: color 0.3s;
-            font-weight: 400;
-        }
-
-        .contact-links a:hover {
-            color: var(--primary-700);
-        }
-
-        /* Navigation */
-        nav {
-            background: white;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--primary-200);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--primary-600);
-            margin: 0 28px;
-            font-weight: 400;
-            font-size: 0.95em;
-            transition: color 0.3s;
-            letter-spacing: 0.5px;
-        }
-
-        nav a:hover {
-            color: var(--primary-800);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Section */
-        section {
-            margin: 80px 0;
-        }
-
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 45px;
-            text-align: center;
-            color: var(--primary-900);
-            font-weight: 500;
-            letter-spacing: -0.5px;
-        }
-
-        /* Links Box */
-        .links-box {
-            background: var(--primary-100);
-            border: 1px solid var(--primary-200);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 25px 0;
-            text-align: center;
-        }
-
-        .links-box h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9em;
-            color: var(--primary-700);
-            margin-bottom: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .links-box a {
-            color: var(--primary-600);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.95em;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        .links-box a:hover {
-            color: var(--primary-800);
-        }
-
-        /* Featured Banner */
-        .featured-banner {
-            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
-            color: white;
-            padding: 55px 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 60px;
-            box-shadow: 0 10px 30px rgba(72, 101, 129, 0.15);
-        }
-
-        .featured-banner h3 {
-            font-size: 2em;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .featured-banner p {
-            font-size: 1.1em;
-            opacity: 0.95;
-            font-weight: 300;
-        }
-
-        .featured-badge {
-            display: inline-block;
-            background: white;
-            color: var(--primary-700);
-            padding: 8px 22px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            margin-top: 18px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        /* About */
-        .about-content {
-            background: white;
-            padding: 50px;
-            border-radius: 12px;
-            border: 1px solid var(--primary-200);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about-content p {
-            font-size: 1.08em;
-            line-height: 1.9;
-            margin-bottom: 22px;
-            color: var(--primary-700);
-            font-weight: 300;
-        }
-
-        .about-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .about-content strong {
-            color: var(--primary-900);
-            font-weight: 500;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 38px;
-            border-radius: 12px;
-            border: 1px solid var(--primary-200);
-            transition: all 0.3s;
-        }
-
-        .skill-card:hover {
-            border-color: var(--primary-400);
-            box-shadow: 0 8px 20px rgba(72, 101, 129, 0.1);
-        }
-
-        .skill-card h3 {
-            color: var(--primary-800);
-            margin-bottom: 22px;
-            font-size: 1.35em;
-            font-weight: 500;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            background: var(--primary-100);
-            padding: 7px 15px;
-            margin: 5px;
-            border-radius: 6px;
-            font-size: 0.88em;
-            color: var(--primary-700);
-            border: 1px solid var(--primary-200);
-            font-weight: 400;
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--primary-200);
-            transition: all 0.3s;
-        }
-
-        .project-card:hover {
-            border-color: var(--primary-400);
-            box-shadow: 0 12px 28px rgba(72, 101, 129, 0.12);
-            transform: translateY(-4px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3em;
-            border-bottom: 1px solid var(--primary-200);
-            position: relative;
-        }
-
-        .ddf-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: white;
-            color: var(--primary-700);
-            padding: 6px 13px;
-            border-radius: 6px;
-            font-size: 0.3em;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .project-content {
-            padding: 30px;
-        }
-
-        .project-content h3 {
-            color: var(--primary-900);
-            margin-bottom: 12px;
-            font-size: 1.45em;
-            font-weight: 500;
-        }
-
-        .project-content p {
-            color: var(--primary-600);
-            margin-bottom: 20px;
-            line-height: 1.7;
-            font-size: 0.95em;
-            font-weight: 300;
-        }
-
-        .project-tag {
-            display: inline-block;
-            background: var(--primary-100);
-            color: var(--primary-700);
-            padding: 6px 13px;
-            margin: 3px;
-            border-radius: 5px;
-            font-size: 0.82em;
-            border: 1px solid var(--primary-200);
-            font-weight: 400;
-        }
-
-        /* Timeline */
-        .timeline {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            background: white;
-            padding: 38px;
-            border-radius: 12px;
-            border: 1px solid var(--primary-200);
-            margin-bottom: 25px;
-            transition: all 0.3s;
-        }
-
-        .timeline-item:hover {
-            border-color: var(--primary-400);
-            box-shadow: 0 8px 20px rgba(72, 101, 129, 0.1);
-        }
-
-        .timeline-item h3 {
-            color: var(--primary-900);
-            font-size: 1.45em;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .timeline-item .company {
-            color: var(--primary-600);
-            font-weight: 500;
-            margin-bottom: 5px;
-            font-size: 0.95em;
-        }
-
-        .timeline-item .duration {
-            color: var(--primary-400);
-            font-size: 0.88em;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .timeline-item ul {
-            margin-left: 20px;
-        }
-
-        .timeline-item li {
-            color: var(--primary-700);
-            margin-bottom: 10px;
-            line-height: 1.7;
-            font-size: 0.95em;
-            font-weight: 300;
-        }
-
-        /* Contact */
-        .contact-section {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 12px;
-            border: 1px solid var(--primary-200);
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .contact-section h2 {
-            margin-bottom: 15px;
-        }
-
-        .contact-section p {
-            font-size: 1.08em;
-            margin-bottom: 35px;
-            color: var(--primary-600);
-            font-weight: 300;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            background: var(--primary-700);
-            color: white;
-            padding: 13px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: inline-block;
-            font-size: 0.95em;
-            letter-spacing: 0.3px;
-        }
-
-        .btn:hover {
-            background: var(--primary-800);
-            box-shadow: 0 6px 18px rgba(72, 101, 129, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        footer {
-            background: white;
-            border-top: 1px solid var(--primary-200);
-            color: var(--primary-600);
-            text-align: center;
-            padding: 40px;
-            margin-top: 80px;
-            font-size: 0.9em;
-            font-weight: 300;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-            
-            section h2 {
-                font-size: 2em;
-            }
-
-            .projects-grid,
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav a {
-                display: block;
-                margin: 12px 0;
-            }
-
-            .about-content {
-                padding: 35px 25px;
-            }
-
-            .featured-banner {
-                padding: 45px 25px;
-            }
-
-            .featured-banner h3 {
-                font-size: 1.6em;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .links-box a {
-                display: block;
-                margin: 8px 0;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayuri Parkhe — Full-Stack Developer → AI Automation Engineer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg:#0F1419; --surface:#161D27; --surface-2:#1D2632; --line:#2A3441;
+    --accent:#5EEAD4; --accent-dim:#2E6F66; --text:#E8ECF1; --muted:#8B95A5; --gold:#F0B34F;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin:0 0 10px;}
+  h1{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:clamp(30px,5vw,48px);line-height:1.1;margin:0 0 12px;letter-spacing:-0.01em;}
+  h2{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:22px;margin:0 0 22px;letter-spacing:-0.005em;}
+  h3{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:16px;margin:0 0 6px;}
+  p{line-height:1.65;color:var(--text);margin:0 0 14px;}
+  .muted{color:var(--muted);}
+
+  /* HERO */
+  .hero{padding:90px 0 60px;border-bottom:1px solid var(--line);}
+  .hero .tag{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--accent);margin:0 0 20px;}
+  .hero .lede{max-width:640px;font-size:16px;color:var(--muted);}
+  .contact-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+  .contact-row a{color:var(--text);border:1px solid var(--line);padding:7px 13px;border-radius:20px;}
+  .contact-row a:hover{color:var(--accent);border-color:var(--accent-dim);text-decoration:none;}
+
+  .pipeline{display:flex;align-items:center;margin:36px 0 4px;}
+  .node{display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);padding:6px 11px;border:1px solid var(--line);border-radius:20px;background:var(--surface);white-space:nowrap;}
+  .node .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);}
+  .wire{flex:1;height:1px;background:linear-gradient(90deg,var(--line),var(--accent-dim),var(--line));min-width:16px;margin:0 6px;}
+
+  /* AUTOMATION FLAGSHIP */
+  .flagship{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:34px;margin-top:8px;}
+  .flagship .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
+  .tag-chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--accent);border:1px solid var(--accent-dim);padding:4px 10px;border-radius:20px;}
+  .flow{display:flex;align-items:stretch;gap:0;margin-top:26px;flex-wrap:wrap;}
+  .flow-step{flex:1;min-width:140px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:16px;}
+  .flow-step .n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+  .flow-step .t{font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:var(--text);margin-top:4px;}
+  .flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent-dim);font-family:'IBM Plex Mono',monospace;padding:0 8px;}
+
+  /* SKILLS */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+  .skill-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;}
+  .skill-card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.8;}
+  .skill-card .cat{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+
+  /* PROJECTS */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;}
+  .proj-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;transition:border-color .2s;}
+  .proj-card:hover{border-color:var(--accent-dim);}
+  .proj-card .cat{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--gold);letter-spacing:.05em;margin-bottom:6px;}
+  .proj-card h3{margin-bottom:6px;font-size:14.5px;}
+  .proj-card p{font-size:12.5px;color:var(--muted);margin-bottom:10px;}
+  .proj-card .link{font-family:'IBM Plex Mono',monospace;font-size:11.5px;}
+  .proj-card.featured{grid-column:span 2;background:linear-gradient(135deg,var(--surface),var(--surface-2));border-color:var(--accent-dim);}
+
+  /* EXPERIENCE */
+  .timeline{position:relative;padding-left:26px;}
+  .timeline::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .tl-item{position:relative;margin-bottom:34px;}
+  .tl-item::before{content:'';position:absolute;left:-26px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);}
+  .tl-item .role{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;}
+  .tl-item .org{color:var(--accent);font-size:13.5px;font-family:'IBM Plex Mono',monospace;}
+  .tl-item .dates{color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;margin-bottom:8px;}
+  .tl-item ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.75;}
+
+  /* CONTACT */
+  .contact-cta{text-align:center;padding:70px 0;}
+  .contact-cta a.btn{display:inline-block;background:var(--accent);color:#08201C;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:14px;padding:13px 28px;border-radius:8px;margin-top:20px;}
+  .contact-cta a.btn:hover{text-decoration:none;transform:translateY(-1px);}
+  footer{text-align:center;padding:24px 0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11.5px;}
+
+  @media (max-width:640px){
+    .proj-card.featured{grid-column:span 1;}
+    section{padding:44px 0;}
+  }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Mayuri Parkhe</h1>
-        <p>AI-led Designer & Full Stack Developer</p>
-        <p style="font-size: 0.95em; color: var(--primary-500);">Mumbai, India | Paderborn, Germany | 17+ Live Projects</p>
-        <div class="contact-links">
-            <a href="/cdn-cgi/l/email-protection#c8a5a9b1bdbaa1b8a9baa388afa5a9a1a4e6aba7a5">📧 <span class="__cf_email__" data-cfemail="c9a4a8b0bcbba0b9a8bba289aea4a8a0a5e7aaa6a4">[email&#160;protected]</span></a>
-            <a href="tel:+918450995536">📱 +91 8450995536</a>
-             <a href="tel:+4915510860663">📱+49 15510860663</a>
-            <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">💼 LinkedIn</a>
-            <a href="https://github.com/mayuripark" target="_blank">💻 GitHub</a>
-        </div>
-    </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<div class="wrap hero">
+  <div class="eyebrow">Mumbai, India · Paderborn, Germany</div>
+  <h1>Mayuri Parkhe</h1>
+  <div class="tag">Full-Stack Developer → AI Automation Engineer</div>
+  <p class="lede">3.5 years building production e-commerce systems — 17+ live brand pages for Dubai Duty Free, Oracle Commerce Cloud storefronts, React/Node/Python across the stack. Now applying that same engineering rigor to AI-driven automation: workflow orchestration (Make.com), lifecycle marketing automation (MailerLite), and Claude/GPT API integration into real business processes.</p>
+  <div class="contact-row">
+    <a href="mailto:mayuripark@gmail.com">✉ mayuripark@gmail.com</a>
+    <a href="tel:+918450995536">📱 +91 8450995536</a>
+    <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn</a>
+    <a href="https://github.com/mayuripark" target="_blank">GitHub</a>
+  </div>
+  <div class="pipeline">
+    <div class="node"><span class="dot"></span>full-stack dev</div>
+    <div class="wire"></div>
+    <div class="node"><span class="dot"></span>marketing automation</div>
+    <div class="wire"></div>
+    <div class="node"><span class="dot"></span>AI-driven workflows</div>
+  </div>
+</div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Featured Banner -->
-        <div class="featured-banner">
-            <h3>⭐ Featured: Clarins - Built from Scratch</h3>
-            <p>17+ live brand pages across 9 categories for Dubai Duty Free</p>
-            <span class="featured-badge">3+ Years | Full Stack Development | E-commerce</span>
-        </div>
-
-        <!-- Clarins Spotlight -->
-        <div class="links-box" style="margin-bottom: 50px; background: linear-gradient(135deg, var(--primary-100) 0%, white 100%);">
-            <h4 style="font-size: 1.1em; margin-bottom: 15px;">🌟 SPOTLIGHT PROJECT</h4>
-            <p style="margin-bottom: 15px; color: var(--primary-700); font-size: 1.05em; font-weight: 400;"><strong>Clarins Beauty Brand Page</strong> - Complete custom build from scratch</p>
-            <a href="https://www.dubaidutyfree.com/Clarins" target="_blank" style="background: var(--primary-700); color: white; padding: 12px 30px; border-radius: 8px; display: inline-block; margin-top: 5px; text-decoration: none; font-weight: 500;">View Live Project →</a>
-        </div>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2>About</h2>
-            <div class="about-content">
-                <p>Full Stack Developer with <strong>3+ years of professional experience</strong> specializing in e-commerce development, UI/UX design, and frontend engineering.</p>
-                <p><strong>Featured Achievement:</strong> Built the Clarins brand page completely from scratch - custom frontend, backend, and design integration for Dubai Duty Free.</p>
-                <p>Developed <strong>17+ live brand pages</strong> across 9 categories including Tom Ford, Giorgio Armani, Apple, Dyson, Louis XIII, and more. Proven expertise in React.js, Python (Django/Flask), and creating user-centered designs using Figma, Adobe XD, and Sketch.</p>
-                <p>Strong implementation skills in HTML5, CSS3, Material UI, responsive design, and delivering intuitive, accessible user interfaces for e-commerce platforms.</p>
-                <p>Experienced in <strong>AI-led creative workflows</strong> — using Midjourney, Adobe Firefly, Claude (Anthropic), and ChatGPT to produce and refine brand-specific static visual content. Led end-to-end digital creative operations for <strong>Monda LLC</strong> (Fashion Stylist Academy), including brand identity rollout, Webflow platform migration, and visual content production for a fashion and lifestyle brand.</p>
-                <p><strong>Languages:</strong> English (Native Bilingual - C2), German (Elementary - A2)</p>
-                
-                <div class="links-box">
-                    <h4>Connect With Me</h4>
-                    <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/mayuripark" target="_blank">GitHub</a>
-                    <a href="/cdn-cgi/l/email-protection#9af7fbe3efe8f3eafbe8f1dafdf7fbf3f6b4f9f5f7">Email</a>
-                    <a href="tel:+918450995536">Phone</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills & Expertise</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>UX/UI Design Tools</h3>
-                    <div class="skill-tag">Figma</div>
-                    <div class="skill-tag">Adobe XD</div>
-                    <div class="skill-tag">Sketch</div>
-                    <div class="skill-tag">Wireframing</div>
-                    <div class="skill-tag">Prototyping</div>
-                    <div class="skill-tag">User Research</div>
-                    <div class="skill-tag">Design Systems</div>
-                </div>
-
-                <div class="skill-card" style="border: 2px solid var(--primary-500);">
-                    <h3>AI & Creative Tools</h3>
-                    <div class="skill-tag" style="background: var(--primary-700); color: white;">Midjourney</div>
-                    <div class="skill-tag" style="background: var(--primary-700); color: white;">Adobe Firefly</div>
-                    <div class="skill-tag" style="background: var(--primary-700); color: white;">Claude (Anthropic)</div>
-                    <div class="skill-tag" style="background: var(--primary-700); color: white;">ChatGPT / DALL·E</div>
-                    <div class="skill-tag">Adobe Photoshop</div>
-                    <div class="skill-tag">Adobe Illustrator</div>
-                    <div class="skill-tag">Prompt Engineering</div>
-                    <div class="skill-tag">Brand Visual Production</div>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tag">JavaScript (3+ years)</div>
-                    <div class="skill-tag">Python (2.5 years)</div>
-                    <div class="skill-tag">C</div>
-                    <div class="skill-tag">MATLAB</div>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Frontend Development</h3>
-                    <div class="skill-tag">React.js</div>
-                    <div class="skill-tag">JavaScript ES6+</div>
-                    <div class="skill-tag">HTML5</div>
-                    <div class="skill-tag">CSS3</div>
-                    <div class="skill-tag">Material UI</div>
-                    <div class="skill-tag">Responsive Design</div>
-                    <div class="skill-tag">Accessibility (WCAG)</div>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Backend Development</h3>
-                    <div class="skill-tag">Python</div>
-                    <div class="skill-tag">Django</div>
-                    <div class="skill-tag">Flask</div>
-                    <div class="skill-tag">RESTful APIs</div>
-                    <div class="skill-tag">Node.js</div>
-                </div>
-
-                <div class="skill-card">
-                    <h3>E-commerce & CMS</h3>
-                    <div class="skill-tag">Oracle Commerce Cloud</div>
-                    <div class="skill-tag">HubSpot Integration</div>
-                    <div class="skill-tag">Payment Gateway Integration</div>
-                    <div class="skill-tag">Shopping Cart Systems</div>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Database & Tools</h3>
-                    <div class="skill-tag">MySQL</div>
-                    <div class="skill-tag">PostgreSQL</div>
-                    <div class="skill-tag">MongoDB</div>
-                    <div class="skill-tag">Oracle DB</div>
-                    <div class="skill-tag">Git</div>
-                    <div class="skill-tag">Jira</div>
-                    <div class="skill-tag">Postman</div>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Security & Methodologies</h3>
-                    <div class="skill-tag">OAuth2</div>
-                    <div class="skill-tag">API Security Standards</div>
-                    <div class="skill-tag">Agile/Scrum</div>
-                    <div class="skill-tag">Test-Driven Development</div>
-                    <div class="skill-tag">Code Reviews</div>
-                </div>
-            </div>
-
-            <div class="links-box" style="margin-top: 40px;">
-                <h4>View My Work</h4>
-                <a href="https://github.com/mayuripark" target="_blank">GitHub Portfolio</a>
-                <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn Projects</a>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Live Projects - Dubai Duty Free</h2>
-            
-            <h3 style="text-align: center; color: var(--primary-700); margin-bottom: 35px; font-size: 1.6em;">17+ Live Brand Pages Across 9 Categories</h3>
-            
-            <div class="projects-grid">
-                <!-- Clarins - Featured -->
-                <div class="project-card" style="border: 2px solid var(--primary-600);">
-                    <div class="project-image">💄<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Clarins ⭐</h3>
-                        <p>Complete custom brand page built from scratch - Frontend, Backend & Design integration.</p>
-                        <a href="https://www.dubaidutyfree.com/Clarins" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag" style="background: var(--primary-700); color: white;">Custom Build</span>
-                        <span class="project-tag">React.js</span>
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Full Stack</span>
-                    </div>
-                </div>
-
-                <!-- Beauty Category -->
-                <div class="project-card">
-                    <div class="project-image">💄<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Tom Ford Beauty</h3>
-                        <p>Luxury cosmetics brand page with premium aesthetic and elegant product presentation.</p>
-                        <a href="https://www.dubaidutyfree.com/TomFord" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Figma</span>
-                        <span class="project-tag">Luxury UI</span>
-                        <span class="project-tag">Responsive</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">💄<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Giorgio Armani</h3>
-                        <p>Sophisticated beauty brand with elegant design and refined user experience.</p>
-                        <a href="https://www.dubaidutyfree.com/giorgioarmani" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Premium Design</span>
-                        <span class="project-tag">Brand Identity</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">💄<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Kenzo</h3>
-                        <p>Modern beauty brand with artistic flair and engaging product displays.</p>
-                        <a href="https://www.dubaidutyfree.com/Kenzo" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Creative UI</span>
-                        <span class="project-tag">Material UI</span>
-                    </div>
-                </div>
-
-                <!-- Technology Category -->
-                <div class="project-card">
-                    <div class="project-image">📱<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Apple Technology</h3>
-                        <p>Premium electronics store with sleek product showcase and modern design.</p>
-                        <a href="https://www.dubaidutyfree.com/apple" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">E-Commerce</span>
-                        <span class="project-tag">React.js</span>
-                        <span class="project-tag">Modern UI</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">📱<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Dyson</h3>
-                        <p>Innovative home technology with engaging product demonstrations.</p>
-                        <a href="https://www.dubaidutyfree.com/dyson" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Product Gallery</span>
-                        <span class="project-tag">UX Design</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">📱<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Belkin</h3>
-                        <p>Electronics accessories with clear product comparison features.</p>
-                        <a href="https://www.dubaidutyfree.com/belkin" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Comparison UI</span>
-                        <span class="project-tag">Responsive</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">📱<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Braun</h3>
-                        <p>Premium grooming products with clean, minimalist design.</p>
-                        <a href="https://www.dubaidutyfree.com/braun" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Minimalist UI</span>
-                        <span class="project-tag">Product Focus</span>
-                    </div>
-                </div>
-
-                <!-- Liquor Category -->
-                <div class="project-card">
-                    <div class="project-image">🥃<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Louis XIII Cognac</h3>
-                        <p>Ultra-premium spirits with luxury brand experience and sophisticated design.</p>
-                        <a href="https://www.dubaidutyfree.com/louisXIII" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Luxury Design</span>
-                        <span class="project-tag">Premium UX</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🥃<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>The Macallan</h3>
-                        <p>Premium whisky brand with sophisticated storytelling.</p>
-                        <a href="https://www.dubaidutyfree.com/Themacallan-home" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Storytelling UI</span>
-                        <span class="project-tag">Brand Identity</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🥃<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Baileys</h3>
-                        <p>Popular liqueur with engaging product presentation.</p>
-                        <a href="https://www.dubaidutyfree.com/baileys" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Fun UI</span>
-                        <span class="project-tag">Product Gallery</span>
-                    </div>
-                </div>
-
-                <!-- Watches & Fashion -->
-                <div class="project-card">
-                    <div class="project-image">⌚<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Rado Watches</h3>
-                        <p>Luxury timepieces with immersive product galleries.</p>
-                        <a href="https://www.dubaidutyfree.com/rado" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Luxury UX</span>
-                        <span class="project-tag">Product Showcase</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">👔<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Silhouette Eyewear</h3>
-                        <p>Premium fashion accessories with elegant presentation.</p>
-                        <a href="https://www.dubaidutyfree.com/silhouette" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Fashion UI</span>
-                        <span class="project-tag">Elegant Design</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">👔<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Tumi Luggage</h3>
-                        <p>Travel accessories with functional design focus.</p>
-                        <a href="https://www.dubaidutyfree.com/Tumi" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Material UI</span>
-                        <span class="project-tag">Product Features</span>
-                    </div>
-                </div>
-
-                <!-- Tobacco, Food & Events -->
-                <div class="project-card">
-                    <div class="project-image">🚬<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>IQOS Tobacco</h3>
-                        <p>Modern tobacco alternative with premium presentation.</p>
-                        <a href="https://www.dubaidutyfree.com/iqos" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Modern UI</span>
-                        <span class="project-tag">Age Verification</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🍫<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Jelly Beans</h3>
-                        <p>Fun confectionery page with colorful design.</p>
-                        <a href="https://www.dubaidutyfree.com/jellybeans" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Playful Design</span>
-                        <span class="project-tag">Grid Layouts</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">✈️<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>Emirates Souvenirs</h3>
-                        <p>Cultural design with gift-giving focus and brand heritage.</p>
-                        <a href="https://www.dubaidutyfree.com/Emirates" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Cultural Design</span>
-                        <span class="project-tag">Brand Heritage</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🎾<span class="ddf-badge">DUBAI DUTY FREE</span></div>
-                    <div class="project-content">
-                        <h3>DDF Tennis Championship</h3>
-                        <p>Event page with ticketing and dynamic sports design.</p>
-                        <a href="https://www.dubaidutyfree.com/ddfTennis" target="_blank" style="display: inline-block; background: var(--primary-700); color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin: 12px 0; font-weight: 500;">View Live →</a><br>
-                        <span class="project-tag">Event Design</span>
-                        <span class="project-tag">Interactive UI</span>
-                        <span class="project-tag">Sports UX</span>
-                    </div>
-                </div>
-
-                <!-- Other Projects -->
-                <!-- Monda LLC -->
-                <div class="project-card" style="border: 2px solid var(--primary-500);">
-                    <div class="project-image">👗<span class="ddf-badge">FASHION & LIFESTYLE</span></div>
-                    <div class="project-content">
-                        <h3>Monda LLC ⭐</h3>
-                        <p>End-to-end digital creative operations for a Fashion Stylist Academy. Brand identity rollout, Webflow platform migration, and visual content production using AI-led design tools.</p>
-                        <span class="project-tag" style="background: var(--primary-700); color: white;">AI-led Design</span>
-                        <span class="project-tag">Webflow</span>
-                        <span class="project-tag">Brand Identity</span>
-                        <span class="project-tag">Adobe Creative Suite</span>
-                        <span class="project-tag">Fashion</span>
-                        <span class="project-tag">MailerLite</span>
-                        <span class="project-tag">Make.com</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🤖</div>
-                    <div class="project-content">
-                        <h3>Smart AGROBOT</h3>
-                        <p>AI-powered agricultural robot using Python for disease detection. Published research paper in IJAREEIE.</p>
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Machine Learning</span>
-                        <span class="project-tag">Research</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">💳</div>
-                    <div class="project-content">
-                        <h3>Payment Gateway Integration</h3>
-                        <p>Secure payment gateway with focus on user experience and API security.</p>
-                        <span class="project-tag">RESTful APIs</span>
-                        <span class="project-tag">OAuth2</span>
-                        <span class="project-tag">Security</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="links-box" style="margin-top: 40px;">
-                <h4>More Projects</h4>
-                <a href="https://github.com/mayuripark" target="_blank">View GitHub Repositories</a>
-                <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn Case Studies</a>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Software Engineer - Full Stack Developer</h3>
-                    <div class="company">Mastek Ltd., Mumbai</div>
-                    <div class="duration">August 2021 - March 2025</div>
-                    <ul>
-                        <li>Built Clarins brand page from scratch - complete custom development including frontend (React.js), backend (Python/Django), and design integration</li>
-                        <li>Developed 17+ live brand pages across 9 categories for Dubai Duty Free including Tom Ford, Giorgio Armani, Apple, Dyson, Louis XIII, and premium luxury brands</li>
-                        <li>Designed and developed user-centered interfaces using Figma and Adobe XD, translating designs into React.js components</li>
-                        <li>Implemented responsive, accessible UI components using React.js, Material UI, HTML5, and CSS3</li>
-                        <li>Integrated secure payment gateways using RESTful APIs and HubSpot for e-commerce platforms</li>
-                        <li>Designed and maintained design systems ensuring consistent user experience across all brand touchpoints</li>
-                        <li>Collaborated with product managers and developers on Oracle Commerce Cloud storefronts</li>
-                        <li>Performed A/B testing and iterative design improvements based on user feedback and analytics</li>
-                        <li>Mentored team members on UI/UX best practices and participated in design reviews</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Oracle Commerce Cloud Analyst</h3>
-                    <div class="company">Ibizsoft Inc., Mumbai</div>
-                    <div class="duration">March 2021 - August 2021</div>
-                    <ul>
-                        <li>Designed UI/UX for e-commerce clients using Figma and implemented custom features aligned with brand guidelines</li>
-                        <li>Created wireframes and prototypes for client projects, ensuring optimal user experience</li>
-                        <li>Delivered scalable, responsive designs using HTML5, CSS3, and Material UI components</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item" style="border: 2px solid var(--primary-500);">
-                    <h3>Freelance Digital Creative & Operations Lead</h3>
-                    <div class="company">Monda LLC (Fashion Stylist Academy), Remote</div>
-                    <div class="duration">Nov 2025 – Present</div>
-                    <ul>
-                        <li>Managed end-to-end digital creative operations for a Fashion Stylist Academy, translating brand vision into consistent visual output across web and marketing touchpoints</li>
-                        <li>Produced and refined static visual content using AI-led tools — Midjourney, Adobe Firefly, Claude, and ChatGPT — with prompt engineering tailored to client brand aesthetics</li>
-                        <li>Executed full platform migration from FunnelSpot to Webflow, implementing brand-compliant typography, colour systems, and layout standards</li>
-                        <li>Integrated MailerLite, Close.com, and Make.com automations, streamlining content delivery and client communication workflows</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>MATLAB Developer</h3>
-                    <div class="company">MATLAB Helper, Mumbai</div>
-                    <div class="duration">April 2020 - November 2020</div>
-                    <ul>
-                        <li>Authored technical blog on Pitch Detection of Speech Signal using Autocorrelation</li>
-                        <li>Organized webinar on Fuzzy Logic Toolbox and revised Digital Signal Processing online course</li>
-                        <li>Managed technical content creation and outreach for YouTube platform</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="links-box" style="margin-top: 40px;">
-                <h4>Professional Profile</h4>
-                <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank">LinkedIn Profile</a>
-                <a href="/cdn-cgi/l/email-protection#c0ada1b9b5b2a9b0a1b2ab80a7ada1a9aceea3afad">Request Resume</a>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="contact-section">
-                <h2>Get in Touch</h2>
-                <p>Available for freelance projects and full-time opportunities in Full Stack Development, UI/UX Design and Frontend Engineering</p>
-                
-                <div class="contact-buttons">
-                    <a href="/cdn-cgi/l/email-protection#2548445c50574c5544574e654248444c490b464a48" class="btn">Email Me</a>
-                    <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank" class="btn">LinkedIn</a>
-                    <a href="https://github.com/mayuripark" target="_blank" class="btn">GitHub</a>
-                    <a href="tel:+918450995536" class="btn">Call</a>
-                </div>
-
-                <div class="links-box" style="margin-top: 40px;">
-                    <h4>Additional Information</h4>
-                    <a href="/cdn-cgi/l/email-protection#bcd1ddc5c9ced5ccddced7fcdbd1ddd5d092dfd3d1">Request Full CV/Resume</a>
-                    <a href="#about">View Complete Profile</a>
-                    <a href="#projects">Portfolio Samples</a>
-                </div>
-            </div>
-        </section>
+<div class="wrap">
+<section id="automation">
+  <div class="eyebrow">Flagship case</div>
+  <h2>Automation in production, not a portfolio exercise</h2>
+  <div class="flagship">
+    <h3 style="font-size:19px;">Monda LLC — Fashion Stylist Academy</h3>
+    <p class="muted" style="font-family:'IBM Plex Mono',monospace;font-size:12px;">Freelance Digital Creative &amp; Operations Lead · Nov 2025 – Present</p>
+    <p>Own end-to-end digital operations for a live fashion education business — not a sandbox project. Migrated the platform from FunnelSpot to Webflow, then built the automation layer connecting content, email, and client communication into one working pipeline.</p>
+    <div class="flow">
+      <div class="flow-step"><div class="n">01 — content</div><div class="t">Claude / ChatGPT / Midjourney prompt-engineered brand visuals</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="n">02 — lifecycle</div><div class="t">MailerLite sequences, Close.com CRM sync</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="n">03 — orchestration</div><div class="t">Make.com automations tying it together</div></div>
     </div>
+    <div class="tags">
+      <span class="tag-chip">Make.com</span>
+      <span class="tag-chip">MailerLite</span>
+      <span class="tag-chip">Close.com</span>
+      <span class="tag-chip">Claude / GPT API</span>
+      <span class="tag-chip">Webflow</span>
+      <span class="tag-chip">Prompt Engineering</span>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Mayuri Parkhe - AI-led Designer & Full Stack Developer</p>
-        <p>17+ Live Projects for Dubai Duty Free | 3+ Years Experience</p>
-        <p>Mumbai, India| Paderborn, Germany | Available for Remote & On-site Opportunities</p>
-        <p style="margin-top: 15px;">
-            <a href="https://linkedin.com/in/mayuri-parkhe26" target="_blank" style="color: var(--primary-500); text-decoration: none; margin: 0 10px;">LinkedIn</a>
-            <a href="https://github.com/mayuripark" target="_blank" style="color: var(--primary-500); text-decoration: none; margin: 0 10px;">GitHub</a>
-            <a href="mailto:mayuripark@gmail.com" style="color: var(--primary-500); text-decoration: none; margin: 0 10px;">Email</a>
-        </p>
-    </footer>
+<section id="skills">
+  <div class="eyebrow">Capability</div>
+  <h2>Skills &amp; expertise</h2>
+  <div class="skill-grid">
+    <div class="skill-card">
+      <div class="cat">Automation &amp; AI</div>
+      <ul>
+        <li>Make.com workflow orchestration</li>
+        <li>MailerLite lifecycle automation</li>
+        <li>Claude &amp; GPT API integration</li>
+        <li>Prompt engineering for production content</li>
+        <li>CRM automation (Close.com)</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <div class="cat">Full-Stack Development</div>
+      <ul>
+        <li>React.js, JavaScript ES6+</li>
+        <li>Node.js, Python (Django/Flask)</li>
+        <li>RESTful APIs, OAuth2</li>
+        <li>MySQL, PostgreSQL, MongoDB, Oracle DB</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <div class="cat">E-Commerce &amp; CMS</div>
+      <ul>
+        <li>Oracle Commerce Cloud</li>
+        <li>HubSpot integration</li>
+        <li>Payment gateway integration</li>
+        <li>Webflow</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <div class="cat">Design &amp; Frontend</div>
+      <ul>
+        <li>Figma, Adobe XD, Sketch</li>
+        <li>Material UI, responsive &amp; accessible UI (WCAG)</li>
+        <li>Adobe Firefly, Photoshop, Illustrator</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="eyebrow">Selected work</div>
+  <h2>Projects</h2>
+  <div class="proj-grid">
+    <div class="proj-card featured">
+      <div class="cat">Dubai Duty Free · Spotlight</div>
+      <h3>Clarins Beauty — built from scratch</h3>
+      <p>Complete custom brand page: frontend (React.js), backend (Python/Django), and design integration, from zero.</p>
+      <a class="link" href="https://www.dubaidutyfree.com/Clarins" target="_blank">View live →</a>
+    </div>
+    <div class="proj-card"><div class="cat">Dubai Duty Free</div><h3>Tom Ford Beauty</h3><p>Luxury cosmetics, premium responsive UI.</p><a class="link" href="https://www.dubaidutyfree.com/TomFord" target="_blank">View live →</a></div>
+    <div class="proj-card"><div class="cat">Dubai Duty Free</div><h3>Giorgio Armani</h3><p>Elegant brand identity &amp; refined UX.</p><a class="link" href="https://www.dubaidutyfree.com/giorgioarmani" target="_blank">View live →</a></div>
+    <div class="proj-card"><div class="cat">Dubai Duty Free</div><h3>Apple Technology</h3><p>Premium electronics storefront, modern UI.</p><a class="link" href="https://www.dubaidutyfree.com/apple" target="_blank">View live →</a></div>
+    <div class="proj-card"><div class="cat">Dubai Duty Free</div><h3>Dyson</h3><p>Interactive product demonstration gallery.</p><a class="link" href="https://www.dubaidutyfree.com/dyson" target="_blank">View live →</a></div>
+    <div class="proj-card"><div class="cat">Dubai Duty Free</div><h3>Louis XIII Cognac</h3><p>Ultra-premium spirits, sophisticated brand experience.</p><a class="link" href="https://www.dubaidutyfree.com/louisXIII" target="_blank">View live →</a></div>
+    <div class="proj-card"><div class="cat">Dubai Duty Free</div><h3>The Macallan</h3><p>Storytelling-led whisky brand page.</p><a class="link" href="https://www.dubaidutyfree.com/Themacallan-home" target="_blank">View live →</a></div>
+    <div class="proj-card"><div class="cat">Dubai Duty Free</div><h3>Rado Watches</h3><p>Immersive luxury product galleries.</p><a class="link" href="https://www.dubaidutyfree.com/rado" target="_blank">View live →</a></div>
+    <div class="proj-card"><div class="cat">Research · Python / ML</div><h3>Smart AGROBOT</h3><p>AI-powered agricultural robot for disease detection via image processing. Published in IJAREEIE.</p></div>
+    <div class="proj-card"><div class="cat">E-Commerce</div><h3>Payment Gateway Integration</h3><p>Secure payment flow — RESTful APIs, OAuth2, UX-focused checkout.</p></div>
+  </div>
+  <p class="muted" style="margin-top:18px;font-size:13px;">+ 9 more live Dubai Duty Free brand pages — <a href="https://github.com/mayuripark" target="_blank">full list on GitHub</a></p>
+</section>
+
+<section id="experience">
+  <div class="eyebrow">Track record</div>
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="role">Freelance Digital Creative &amp; Operations Lead</div>
+      <div class="org">Monda LLC (Fashion Stylist Academy) · Remote</div>
+      <div class="dates">Nov 2025 – Present</div>
+      <ul>
+        <li>Built the automation layer: MailerLite, Close.com, Make.com integrations streamlining content delivery and client communication</li>
+        <li>Executed full platform migration FunnelSpot → Webflow</li>
+        <li>Produced brand visual content using Claude, ChatGPT, Midjourney, Adobe Firefly with tailored prompt engineering</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="role">Software Engineer — Full Stack Developer</div>
+      <div class="org">Mastek Ltd., Mumbai</div>
+      <div class="dates">August 2021 – March 2025</div>
+      <ul>
+        <li>Built the Clarins brand page from scratch — full frontend/backend/design integration</li>
+        <li>Shipped 17+ live brand pages across 9 categories for Dubai Duty Free</li>
+        <li>Integrated secure payment gateways via RESTful APIs and HubSpot</li>
+        <li>Built &amp; maintained Oracle Commerce Cloud storefronts</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="role">Oracle Commerce Cloud Analyst</div>
+      <div class="org">Ibizsoft Inc., Mumbai</div>
+      <div class="dates">March 2021 – August 2021</div>
+      <ul>
+        <li>UI/UX design in Figma for e-commerce clients; wireframes and prototypes</li>
+        <li>Scalable responsive builds — HTML5, CSS3, Material UI</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="role">MATLAB Developer</div>
+      <div class="org">MATLAB Helper, Mumbai</div>
+      <div class="dates">April 2020 – November 2020</div>
+      <ul>
+        <li>Authored technical blog on pitch detection via autocorrelation</li>
+        <li>Ran a Fuzzy Logic Toolbox webinar; revised a Digital Signal Processing course</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact-cta" style="border-bottom:none;">
+  <div class="eyebrow">Get in touch</div>
+  <h2 style="margin-bottom:6px;">Open to freelance &amp; full-time — AI Automation, Full-Stack, and hybrid roles</h2>
+  <p class="muted">Remote or on-site · India / Germany / international</p>
+  <a class="btn" href="mailto:mayuripark@gmail.com">Email me →</a>
+</section>
+</div>
+
+<footer>© 2026 Mayuri Parkhe · Full-Stack Developer → AI Automation Engineer</footer>
 
 </body>
 </html>
