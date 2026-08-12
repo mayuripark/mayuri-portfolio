@@ -1,2 +1,2 @@
 # mayuri-portfolio
-My UI/UX Design Portfolio
+"Mayuri Parkhe — Full-Stack Developer → AI Automation Engineer"
